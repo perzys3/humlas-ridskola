@@ -1,3 +1,5 @@
+import ContactForm from "@/components/ContactForm";
+
 export default function Contact() {
   return (
     <section id="kontakt" className="mountain-pattern bg-cream py-24">
@@ -66,59 +68,7 @@ export default function Contact() {
             </dl>
           </div>
 
-          <form className="rounded-2xl bg-white p-8 shadow-lg shadow-forest/5">
-            <h3 className="font-serif text-2xl font-semibold text-forest">
-              Skicka ett meddelande
-            </h3>
-            <div className="mt-6 space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-forest">
-                  Namn
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  className="mt-1 w-full rounded-lg border border-cream-dark bg-cream/50 px-4 py-2.5 outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
-                  placeholder="Ditt namn"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-forest">
-                  E-post
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  className="mt-1 w-full rounded-lg border border-cream-dark bg-cream/50 px-4 py-2.5 outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
-                  placeholder="din@epost.se"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-forest">
-                  Meddelande
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="mt-1 w-full resize-none rounded-lg border border-cream-dark bg-cream/50 px-4 py-2.5 outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/20"
-                  placeholder="Berätta vad du är intresserad av..."
-                />
-              </div>
-              <button
-                type="button"
-                className="w-full rounded-full bg-forest py-3 font-semibold text-white transition-colors hover:bg-forest-light"
-              >
-                Skicka meddelande
-              </button>
-              <p className="text-center text-xs text-mountain">
-                Formuläret är en platshållare — vi kopplar ihop det med e-post
-                eller bokningssystem senare.
-              </p>
-            </div>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </section>

@@ -7,7 +7,7 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
     "https://humlasridskola.se",
   locale: "sv_SE",
-  email: "per@jarvsomontage.se",
+  email: "info@humlas.se",
   phone: "+46703611050",
   address: {
     street: "Lustevägen 29",

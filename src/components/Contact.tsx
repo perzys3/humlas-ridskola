@@ -45,10 +45,10 @@ export default function Contact() {
                 </dt>
                 <dd className="mt-1">
                   <a
-                    href="mailto:per@jarvsomontage.se"
+                    href="mailto:info@humlas.se"
                     className="text-forest underline decoration-accent/50 underline-offset-4 transition-colors hover:text-accent"
                   >
-                    per@jarvsomontage.se
+                    info@humlas.se
                   </a>
                 </dd>
               </div>

@@ -21,6 +21,11 @@ const services = [
       "Upplev Järvsös fantastiska bergslandskap till häst. Guidade turer genom otrolig natur — ett äventyr du aldrig glömmer.",
     image: "/tjanst-aventyr.jpg",
     alt: "Ryttare på skogstur till häst i bergen",
+    highlights: [
+      "1 timme mindfulness — 500 kr",
+      "2 timmar ridäventyr — 750 kr",
+      "3 timmar ridäventyr med fika — 1 300 kr",
+    ],
   },
   {
     title: "Weekendpaket med boende",

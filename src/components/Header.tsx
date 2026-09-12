@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-forest/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center">
+        <a href="/" className="flex items-center">
           <Logo priority variant="light" />
         </a>
 
@@ -43,6 +43,8 @@ export default function Header() {
           type="button"
           className="flex flex-col gap-1.5 md:hidden"
           aria-label={open ? "Stäng meny" : "Öppna meny"}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
           onClick={() => setOpen(!open)}
         >
           <span
@@ -58,7 +60,10 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="border-t border-white/10 bg-forest px-6 py-4 md:hidden">
+        <nav
+          id="mobile-nav"
+          className="border-t border-white/10 bg-forest px-6 py-4 md:hidden"
+        >
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a

@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "humlas.se" }],
+      "destination": "https://www.humlas.se/:path*",
+      "permanent": true
+    }
+  ]
+}

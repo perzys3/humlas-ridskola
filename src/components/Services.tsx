@@ -22,7 +22,7 @@ const services = [
     image: "/tjanst-aventyr.jpg",
     alt: "Ryttare på skogstur till häst i bergen",
     highlights: [
-      "1 timme mindfulness — 500 kr",
+      "1 timme mindfulness — 550 kr",
       "2 timmar ridäventyr — 750 kr",
       "3 timmar ridäventyr med fika — 1 300 kr",
     ],

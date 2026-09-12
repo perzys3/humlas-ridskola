@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
-import { getAbsoluteUrl } from "@/lib/site";
+import { getAbsoluteUrl, siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: getAbsoluteUrl("/"),
-      lastModified: new Date(),
+      lastModified: siteConfig.lastUpdated,
       changeFrequency: "weekly",
       priority: 1,
     },

@@ -1,5 +1,38 @@
 import { getAbsoluteUrl, siteConfig } from "@/lib/site";
 
+const offers = [
+  {
+    name: "Utbildning på islandshästar",
+    description:
+      "Strukturerad ridutbildning för nybörjare och erfarna ryttare.",
+  },
+  {
+    name: "Ridlektioner",
+    description: "Individuella och grupplektioner anpassade efter din nivå.",
+  },
+  {
+    name: "Äventyrstur 1 timme mindfulness",
+    description: "Guidad ridtur i Järvsös bergslandskap.",
+    price: "550",
+  },
+  {
+    name: "Äventyrstur 2 timmar ridäventyr",
+    description: "Längre guidad tur till häst genom bergen.",
+    price: "750",
+  },
+  {
+    name: "Äventyrstur 3 timmar med fika",
+    description: "Ridäventyr med fika längs vägen.",
+    price: "1300",
+  },
+  {
+    name: "Weekendpaket med boende",
+    description:
+      "Helgpaket med boende, fullpension, riddagar och restaurangbesök.",
+    price: "4900",
+  },
+];
+
 export default function StructuredData() {
   const structuredData = {
     "@context": "https://schema.org",
@@ -9,7 +42,7 @@ export default function StructuredData() {
     alternateName: siteConfig.shortName,
     description: siteConfig.description,
     url: siteConfig.url,
-    image: getAbsoluteUrl("/hero.jpg"),
+    image: getAbsoluteUrl(siteConfig.ogImage),
     logo: getAbsoluteUrl("/logo.png"),
     email: siteConfig.email,
     telephone: siteConfig.phone,
@@ -31,51 +64,24 @@ export default function StructuredData() {
       name: "Järvsö, Hälsingland",
     },
     sameAs: [siteConfig.instagram],
-    priceRange: "$$",
+    currenciesAccepted: "SEK",
+    paymentAccepted: "Cash, Credit Card",
     knowsLanguage: "sv",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Ridupplevelser",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Utbildning på islandshästar",
-            description:
-              "Strukturerad ridutbildning för nybörjare och erfarna ryttare.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Ridlektioner",
-            description:
-              "Individuella och grupplektioner anpassade efter din nivå.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Äventyrsturer i bergen",
-            description:
-              "Guidade turer till häst genom Järvsös bergslandskap.",
-          },
-        },
-        {
-          "@type": "Offer",
-          price: "4900",
+      itemListElement: offers.map((offer) => ({
+        "@type": "Offer",
+        ...(offer.price && {
+          price: offer.price,
           priceCurrency: "SEK",
-          itemOffered: {
-            "@type": "Service",
-            name: "Weekendpaket med boende",
-            description:
-              "Helgpaket med boende, fullpension, riddagar och restaurangbesök.",
-          },
+        }),
+        itemOffered: {
+          "@type": "Service",
+          name: offer.name,
+          description: offer.description,
         },
-      ],
+      })),
     },
   };
 

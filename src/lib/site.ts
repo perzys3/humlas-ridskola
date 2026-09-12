@@ -5,7 +5,7 @@ export const siteConfig = {
     "Ridutbildning, lektioner, äventyrsturer och weekendpaket på islandshästar i Järvsös fantastiska bergsmiljö. Ridbana högt upp på berget med utsikt och söderläge.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-    "https://humlasridskola.se",
+    "https://www.humlas.se",
   locale: "sv_SE",
   email: "info@humlas.se",
   phone: "+46703611050",
@@ -21,6 +21,7 @@ export const siteConfig = {
     longitude: 16.172,
   },
   instagram: "https://www.instagram.com/humlas_ridskola/",
+  instagramHandle: "@humlas_ridskola",
   keywords: [
     "ridskola Järvsö",
     "islandshästar",
@@ -31,8 +32,18 @@ export const siteConfig = {
     "Hälsingland",
     "weekendpaket ridning",
   ],
+  ogImage: "/hero.jpg",
+  lastUpdated: "2026-03-12",
 };
 
 export function getAbsoluteUrl(path = "/") {
   return `${siteConfig.url}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export function getCanonicalHost() {
+  try {
+    return new URL(siteConfig.url).host;
+  } catch {
+    return "www.humlas.se";
+  }
 }
